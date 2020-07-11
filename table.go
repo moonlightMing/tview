@@ -544,7 +544,7 @@ func (t *Table) GetColumnCount() int {
 	return t.lastColumn + 1
 }
 
-// cellAt returns the row and column located at the given screen coordinates.
+// CellAt returns the row and column located at the given screen coordinates.
 // Each returned value may be negative if there is no row and/or cell. This
 // function will also process coordinates outside the table's inner rectangle so
 // callers will need to check for bounds themselves.
@@ -1248,7 +1248,7 @@ func (t *Table) MouseHandler() func(action MouseAction, event *tcell.EventMouse,
 		switch action {
 		case MouseLeftClick:
 			if t.rowsSelectable || t.columnsSelectable {
-				t.Select(t.cellAt(x, y))
+				t.Select(t.CellAt(x, y))
 			}
 			consumed = true
 			setFocus(t)
