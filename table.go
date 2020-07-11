@@ -548,7 +548,7 @@ func (t *Table) GetColumnCount() int {
 // Each returned value may be negative if there is no row and/or cell. This
 // function will also process coordinates outside the table's inner rectangle so
 // callers will need to check for bounds themselves.
-func (t *Table) cellAt(x, y int) (row, column int) {
+func (t *Table) CellAt(x, y int) (row, column int) {
 	rectX, rectY, _, _ := t.GetInnerRect()
 
 	// Determine row as seen on screen.
